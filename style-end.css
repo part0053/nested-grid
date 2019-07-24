@@ -1,0 +1,97 @@
+.page-wrapper,
+.main,
+.sidebar__wrapper,
+.blog,
+.nav {
+  display: grid;
+  grid-gap: 5px;
+}
+
+.nav {
+  grid-row: 1;
+
+  justify-items: center;
+}
+
+.blog {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  justify-content: center;
+}
+
+.blog__title {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 480px) {
+  .nav {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .page-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .intro {
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
+
+  .main {
+    grid-row: 2;
+    grid-column: 1 / -1;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "nav nav"
+      "about ."
+      "hobbies ."
+      "work work"
+      "blog blog"
+  }
+
+  .nav {
+    grid-area: nav;
+
+    align-content: center;
+
+    height: 75px;
+  }
+
+  .about {
+    grid-area: about;
+  }
+
+  .work {
+    grid-area: work;
+  }
+
+  .hobbies {
+    grid-area: hobbies;
+  }
+
+  .blog {
+    grid-area: blog;
+  }
+
+  .sidebar {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .sidebar__wrapper {
+    grid-template-rows: 75px auto auto;
+
+    align-content: space-between;
+  }
+
+  .sites {
+    grid-row: 2;
+  }
+
+  .resources {
+    grid-row: 3;
+  }
+}
